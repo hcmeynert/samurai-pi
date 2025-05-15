@@ -35,15 +35,15 @@ import java.util.*;
 public class SamuraiPi {
 
     // several global variables
-	public static BigDecimal number;
-	public static BigDecimal result;
-	public static BigDecimal mulFrac;
-	public static BigDecimal divFrac;
-	public static int digits;
-	public static int summands;
-	public static int order = 1;
-	public static int i;
-	public static BigDecimal square, numberSin, sinSP;
+    public static BigDecimal number;
+    public static BigDecimal result;
+    public static BigDecimal mulFrac;
+    public static BigDecimal divFrac;
+    public static int digits;
+    public static int summands;
+    public static int order = 1;
+    public static int i;
+    public static BigDecimal square, numberSin, sinSP;
     public static String message = "";
     // denomCPU sets the fraction of the CPU used,
     // for example denomCPU = 8 means,
@@ -52,7 +52,7 @@ public class SamuraiPi {
 
     // Calculate Pi with my series derived from Takebes square root
     // series from Japanese mathematics (wasan).
-	public static void calculatePi() {
+    public static void calculatePi() {
         long estimatedTime = 1;
         while(i <= summands) {
             
@@ -167,9 +167,9 @@ public class SamuraiPi {
 
         }
 
-	}
+    }
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         // Ask for number of digits wanted
@@ -204,33 +204,33 @@ public class SamuraiPi {
         System.out.println(
             "Using " + digits + " decimal places after decimal point."
             );
-		summands = digits * 2;
+        summands = digits * 2;
     
-		number = new BigDecimal("3.0");
-		result = new BigDecimal("0.0");
-		result = result.add(number);
+        number = new BigDecimal("3.0");
+        result = new BigDecimal("0.0");
+        result = result.add(number);
     
         // Calculate first three summands with my series, where
         // [2i * (2i - 1) / (16 * i * i)] *
         // (2 * i - 1) / (2 * i + 1) 
         // is the quotient of subsequent summands
-		mulFrac = new BigDecimal("" + ((double) 1 * 2 * 1));
-		divFrac = new BigDecimal("" + ((double) 1 * 1 * 16 * 3));
-		number = number.multiply(mulFrac);
-		number = number.divide(divFrac, digits, RoundingMode.HALF_UP);
-		result = result.add(number);
-		
-		mulFrac = new BigDecimal("" + ((double) 3 * 4 * 3));
-		divFrac = new BigDecimal("" + ((double) 2 * 2 * 16 * 5));
-		number = number.multiply(mulFrac);
-		number = number.divide(divFrac, digits, RoundingMode.HALF_UP);
-		result = result.add(number);
-		
-		mulFrac = new BigDecimal("" + ((double) 5 * 6 * 5));
-		divFrac = new BigDecimal("" + ((double) 3 * 3 * 16 * 7));
-		number = number.multiply(mulFrac);
-		number = number.divide(divFrac, digits, RoundingMode.HALF_UP);
-		result = result.add(number);
+        mulFrac = new BigDecimal("" + ((double) 1 * 2 * 1));
+        divFrac = new BigDecimal("" + ((double) 1 * 1 * 16 * 3));
+        number = number.multiply(mulFrac);
+        number = number.divide(divFrac, digits, RoundingMode.HALF_UP);
+        result = result.add(number);
+        
+        mulFrac = new BigDecimal("" + ((double) 3 * 4 * 3));
+        divFrac = new BigDecimal("" + ((double) 2 * 2 * 16 * 5));
+        number = number.multiply(mulFrac);
+        number = number.divide(divFrac, digits, RoundingMode.HALF_UP);
+        result = result.add(number);
+        
+        mulFrac = new BigDecimal("" + ((double) 5 * 6 * 5));
+        divFrac = new BigDecimal("" + ((double) 3 * 3 * 16 * 7));
+        number = number.multiply(mulFrac);
+        number = number.divide(divFrac, digits, RoundingMode.HALF_UP);
+        result = result.add(number);
         
         // now set index of next summand to 4
         i = 4;
@@ -317,5 +317,5 @@ public class SamuraiPi {
             catch( Exception e) {
             }
         }
-  }
+    }
 }
