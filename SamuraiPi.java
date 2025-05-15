@@ -1,6 +1,6 @@
 /*
     SamuraiPi - a Java program for calculating Pi with a series derived
-    from Wasan in Edo-Japan.
+    from an Edo-Japan Wasan series of the square root
     Copyright (C) 2025 Hans-Christian Meynert
 
     This program is free software: you can redistribute it and/or modify
